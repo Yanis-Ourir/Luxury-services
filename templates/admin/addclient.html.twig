@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New client
+{% endblock %}
+
+{% block body %}
+	<img src="{{asset('assets/img/manager.jpg')}}" class="manager-img">
+	
+	<div class="client-form">
+		{{form(form)}}
+	</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Manager
+{% endblock %}
+
+{% block body %}
+	<img src="{{asset('assets/img/manager.jpg')}}" class="manager-img">
+	<table>
+		<thead>
+			<tr>
+				<th>Mail</th>
+				<th>Password</th>
+				<th>Édition</th>
+				<th>Suppression</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			{% for user in users %}
+				<tr>
+					<td>
+						{{user.email}}
+					</td>
+					<td>
+						{{user.password}}
+					</td>
+
+					<td>
+						<a class="waves-effect waves-light btn" href="{{path('app_profil', {id: user.id })}}">Details</a>
+					</td>
+					<td>
+						<a class="waves-effect waves-light btn red lighten-1" href="#">Delete</a>
+					</td>
+				</tr>
+			{% endfor %}
+
+		</tbody>
+	</table>
+
+{% endblock %}
